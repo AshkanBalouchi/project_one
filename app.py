@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect
 
-##from bokeh.plotting import figure,show
+from bokeh.plotting import figure,show
 #from bokeh.io import output_notebook
 #from bokeh.resources import CDN
 #from bokeh.embed import file_html
-#from bokeh.embed import components
+from bokeh.embed import components
 
 app = Flask(__name__)
 
@@ -77,7 +77,7 @@ def index():
         if O==1 : calls.append('Open')
         if AO==1 : calls.append('Adj. Open')
 
-        p = bokeh.plotting.figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
+        p = figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
         for name in calls:
             p.line(mydata.index.values,mydata[name].values,
                 legend=name,
@@ -86,7 +86,7 @@ def index():
 
         #plot = file_html(p, CDN, "my plot")
 
-        script, div = bokeh.embed.components(p)
+        script, div = components(p)
     
         return render_template('end.html',plotscript=script,plotdiv=div)
 

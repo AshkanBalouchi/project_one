@@ -10,17 +10,14 @@
                     <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.10.1.min.js"></script>
 
             
-           {{plotscript}}
-            
-            
-            </script>
-            
-                    </head>
+           {{plotscript | safe}}
+       
+        </head>
     <body>
         <div class=page>
             <h1>Generated graph for Stock Tick<br><a href="/index">Back</a></h1>
             
-            {{plotdev}}
+            {{plotdev | safe}}
             
         </div>
     </body>
