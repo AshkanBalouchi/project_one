@@ -12,32 +12,37 @@ app.vars={}
 
 @app.route('/')
 def main():
-  return redirect('/index')
+    return redirect('/index')
 
-@app.route('/index',methods=['GET','POST'])
+@app.route('/index')
 def index():
-    #nquestions=5
-    if request.method == 'GET':
-        return render_template('main.html')
-    else:
-        #request was a POST
-        app.vars['ticker'] = request.form['ticker']
-        if request.form.get('Close'):
-            app.vars['Close'] = 1
-        else : app.vars['Close'] = 0
-        if request.form.get('Adj. Close'):
-            app.vars['AdjClose'] = 1
-        else : app.vars['AdjClose'] = 0
-        if request.form.get('Open'):
-            app.vars['Open'] = 1
-        else : app.vars['Open'] = 0
-        if request.form.get('Adj. Open'):
-            app.vars['AdjOpen'] = 1
-        else : app.vars['AdjOpen'] = 0
-        #app.vars['Close'] = request.form.get('Close')
-        #app.vars['AdjClose'] = request.form['Adj. Close']
-        #app.vars['Open'] = request.form['Open']
-        #app.vars['AdjOpen'] = request.form['Adj. Open']
+    return render_template('main.html')
+
+
+#@app.route('/index',methods=['GET','POST'])
+#def index():
+#    #nquestions=5
+#    if request.method == 'GET':
+#        return render_template('main.html')
+#    else:
+#        #request was a POST
+#        app.vars['ticker'] = request.form['ticker']
+#        if request.form.get('Close'):
+#            app.vars['Close'] = 1
+#        else : app.vars['Close'] = 0
+#        if request.form.get('Adj. Close'):
+#            app.vars['AdjClose'] = 1
+#        else : app.vars['AdjClose'] = 0
+#        if request.form.get('Open'):
+#            app.vars['Open'] = 1
+#        else : app.vars['Open'] = 0
+#        if request.form.get('Adj. Open'):
+#            app.vars['AdjOpen'] = 1
+#        else : app.vars['AdjOpen'] = 0
+#        #app.vars['Close'] = request.form.get('Close')
+#       #app.vars['AdjClose'] = request.form['Adj. Close']
+#        #app.vars['Open'] = request.form['Open']
+#        #app.vars['AdjOpen'] = request.form['Adj. Open']
         
         
 #        f = open('info.txt','w')
@@ -54,28 +59,28 @@ def index():
 
 
 
-        x=app.vars['ticker']
-        C=app.vars['Close']
-        AC=app.vars['AdjClose']
-        O=app.vars['Open']
-        AO=app.vars['AdjOpen']
+#        x=app.vars['ticker']
+#        C=app.vars['Close']
+#        AC=app.vars['AdjClose']
+#        O=app.vars['Open']
+#        AO=app.vars['AdjOpen']
 
 
-        y='WIKI/%s'%(x)
-        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
-        NumLines=C+AC+O+AO
+#        y='WIKI/%s'%(x)
+#        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
+#        NumLines=C+AC+O+AO
 
-        colors={}
-        colors['Close']="red"
-        colors['Adj. Close']="yellow"
-        colors['Open']="green"
-        colors['Adj. Open']="blue"
+#        colors={}
+#        colors['Close']="red"
+#        colors['Adj. Close']="yellow"
+#        colors['Open']="green"
+#        colors['Adj. Open']="blue"
 
-        calls=[]
-        if C==1 : calls.append('Close')
-        if AC==1 : calls.append('Adj. Close')
-        if O==1 : calls.append('Open')
-        if AO==1 : calls.append('Adj. Open')
+#        calls=[]
+#        if C==1 : calls.append('Close')
+#        if AC==1 : calls.append('Adj. Close')
+#        if O==1 : calls.append('Open')
+#        if AO==1 : calls.append('Adj. Open')
 
 #        p = figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
 #        for name in calls:
@@ -84,12 +89,12 @@ def index():
 #                line_color=colors[name],
 #                line_width=3)
 
-        #plot = file_html(p, CDN, "my plot")
+#        #plot = file_html(p, CDN, "my plot")
 
 #        script, div = components(p)
     
 #        return render_template('end.html',plotscript=script,plotdiv=div)
-	return render_template('end.html')
+#	return render_template('end.html')
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0')
