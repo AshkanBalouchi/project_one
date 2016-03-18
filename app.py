@@ -86,7 +86,7 @@ def index():
             p.line(mydata['Date'],mydata[name].values,
                 legend=name,
                 line_color=colors[name],
-                line_width=3)
+                line_width=1)
 
 #        #plot = file_html(p, CDN, "my plot")
 
