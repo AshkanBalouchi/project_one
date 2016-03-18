@@ -81,7 +81,7 @@ def index():
         if O==1 : calls.append('Open')
         if AO==1 : calls.append('Adj. Open')
 
-        p = figure(title="%s Stock Ticks"%(stock),x_axis_type="datetime", plot_width=500, plot_height=500)
+        p = figure(title="%s Stock Ticks"%(stock),x_axis_type="datetime",x_axis_label='date',y_axis_label='value', plot_width=500, plot_height=500)
         for name in calls:
             p.line(mydata['Date'],mydata[name].values,
                 legend=name,
@@ -92,7 +92,7 @@ def index():
 
         script, div = components(p)
     
-        return render_template('end.html',plotscript=script,plotdiv=div)
+        return render_template('end.html',plotscript=script,plotdiv=div,stock=stock)
 #	return render_template('end.html')
 
 #if __name__ == '__main__':
