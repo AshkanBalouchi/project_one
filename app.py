@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+#from flask import Flask, render_template, request, redirect
 
 #from bokeh.plotting import figure,show
 #from bokeh.io import output_notebook
@@ -6,17 +6,17 @@ from flask import Flask, render_template, request, redirect
 #from bokeh.embed import file_html
 #from bokeh.embed import components
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
-app.vars={}
+#app.vars={}
 
-@app.route('/')
-def main():
-    return redirect('/index')
+#@app.route('/')
+#def main():
+#    return redirect('/index')
 
-@app.route('/index')
-def index():
-    return render_template('main.html')
+#@app.route('/index')
+#def index():
+#    return render_template('main.html')
 
 
 #@app.route('/index',methods=['GET','POST'])
@@ -96,5 +96,20 @@ def index():
 #        return render_template('end.html',plotscript=script,plotdiv=div)
 #	return render_template('end.html')
 
+#if __name__ == '__main__':
+#    app.run(host='0.0.0.0')
+
+from flask import Flask, render_template, request, redirect
+
+app = Flask(__name__)
+
+@app.route('/')
+def main():
+  return redirect('/index')
+
+@app.route('/index')
+def index():
+  return render_template('index.html')
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+  app.run(port=33507)
