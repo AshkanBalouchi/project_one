@@ -49,12 +49,10 @@ def index():
         AC=var['AdjClose']
         O=var['Open']
         AO=var['AdjOpen']
-
-
-       api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
-       session = requests.Session()
-       session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
-       raw_data = session.get(api_url)
+	api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
+	session = requests.Session()
+	session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
+	raw_data = session.get(api_url)
 #        api_url_csv = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.csv' % stock
 #        mydata = pandas.read_csv(api_url_csv)	
 #        y='WIKI/%s'%(stock)
