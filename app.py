@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import requests
+import pandas
 #from Quandl import get
 #import quandl
 #from quandl import Quandl
