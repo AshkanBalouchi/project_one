@@ -44,14 +44,16 @@ def index():
         
         
 
-        x=var['ticker']
+        stock=var['ticker']
         C=var['Close']
         AC=var['AdjClose']
         O=var['Open']
         AO=var['AdjOpen']
 
 
-        y='WIKI/%s'%(x)
+	api_url_csv = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.csv' % stock
+	mydata = pd.read_csv(api_url_csv)	
+#        y='WIKI/%s'%(x)
 #        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
 #        mydata = Quandl.get(y,rows=30)
         NumLines=C+AC+O+AO
