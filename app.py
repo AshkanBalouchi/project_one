@@ -78,7 +78,7 @@ def index():
         if O==1 : calls.append('Open')
         if AO==1 : calls.append('Adj. Open')
 
-        p = figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
+        p = bokeh.plotting.figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
 #        for name in calls:
 #            p.line(mydata.index.values,mydata[name].values,
 #                legend=name,
