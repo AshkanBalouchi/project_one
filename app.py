@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import requests
+import simplejason as json
 #from Quandl import get
 #import quandl
 #from quandl import Quandl
@@ -53,6 +54,8 @@ def index():
 	session = requests.Session()
 	session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
 	raw_data = session.get(api_url)
+	mydata = pandas.DataFrame.from_dict(raw_data.json()['data'])
+	mydata.columns=raw_data.json()['column_names']
 #        api_url_csv = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.csv' % stock
 #        mydata = pandas.read_csv(api_url_csv)	
 #        y='WIKI/%s'%(stock)
