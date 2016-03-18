@@ -8,4 +8,4 @@ requests>=2.2.1
 simplejson==3.8.0
 numpy
 pandas
-
+bokeh
