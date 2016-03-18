@@ -54,7 +54,9 @@ def index():
 	api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
 	session = requests.Session()
 	session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
+
 	raw_data = session.get(api_url)
+
 #	mydata = pandas.DataFrame.from_dict(raw_data.json()['data'])
 #	mydata.columns=raw_data.json()['column_names']
 #        api_url_csv = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.csv' % stock
