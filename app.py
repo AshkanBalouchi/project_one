@@ -81,7 +81,7 @@ def index():
 
         p = figure(title="%s Stock Ticks"%(stock),x_axis_type="datetime", plot_width=500, plot_height=500)
         for name in calls:
-            p.line(mydata.index.values,mydata[name].values,
+            p.line(mydata['Date'],mydata[name].values,
                 legend=name,
                 line_color=colors[name],
                 line_width=3)
