@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect
 
-from bokeh.plotting import figure,show
+#from bokeh.plotting import figure,show
 #from bokeh.io import output_notebook
 #from bokeh.resources import CDN
 #from bokeh.embed import file_html
-from bokeh.embed import components
+#from bokeh.embed import components
 
 app = Flask(__name__)
 
@@ -40,14 +40,14 @@ def index():
         #app.vars['AdjOpen'] = request.form['Adj. Open']
         
         
-        f = open('info.txt','w')
-        f.write('Ticker: %s\n'%(app.vars['ticker']))
-        f.write('Close: %s\n'%(app.vars['Close']))
-        f.write('Adjusted Close: %s\n'%(app.vars['AdjClose']))
-        f.write('Open: %s\n'%(app.vars['Open']))
-        f.write('Adjuseted Open: %s\n'%(app.vars['AdjOpen']))
+#        f = open('info.txt','w')
+#        f.write('Ticker: %s\n'%(app.vars['ticker']))
+#        f.write('Close: %s\n'%(app.vars['Close']))
+#        f.write('Adjusted Close: %s\n'%(app.vars['AdjClose']))
+#        f.write('Open: %s\n'%(app.vars['Open']))
+#       f.write('Adjuseted Open: %s\n'%(app.vars['AdjOpen']))
         
-        f.close()
+#        f.close()
         
         
 
@@ -77,19 +77,19 @@ def index():
         if O==1 : calls.append('Open')
         if AO==1 : calls.append('Adj. Open')
 
-        p = figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
-        for name in calls:
-            p.line(mydata.index.values,mydata[name].values,
-                legend=name,
-                line_color=colors[name],
-                line_width=3)
+#        p = figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
+#        for name in calls:
+#            p.line(mydata.index.values,mydata[name].values,
+#                legend=name,
+#                line_color=colors[name],
+#                line_width=3)
 
         #plot = file_html(p, CDN, "my plot")
 
-        script, div = components(p)
+#        script, div = components(p)
     
-        return render_template('end.html',plotscript=script,plotdiv=div)
-
+#        return render_template('end.html',plotscript=script,plotdiv=div)
+	return render_template('end.html')
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0')
