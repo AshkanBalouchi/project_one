@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 #import Quandl
-from Quandl import Quandl
+from quandl import Quandl
 #from bokeh.plotting import figure,show
 #from bokeh.io import output_notebook
 #from bokeh.resources import CDN
