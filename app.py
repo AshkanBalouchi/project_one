@@ -5,6 +5,7 @@ import pandas
 #from Quandl import get
 #import quandl
 #from quandl import Quandl
+import bokeh
 from bokeh.plotting import figure,show
 #from bokeh.io import output_notebook
 #from bokeh.resources import CDN
@@ -78,7 +79,7 @@ def index():
         if O==1 : calls.append('Open')
         if AO==1 : calls.append('Adj. Open')
 
-        p = bokeh.plotting.figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
+        p = figure(title="%s Stock Ticks"%(x),x_axis_type="datetime", plot_width=500, plot_height=500)
 #        for name in calls:
 #            p.line(mydata.index.values,mydata[name].values,
 #                legend=name,
