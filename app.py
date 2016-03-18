@@ -51,7 +51,7 @@ def index():
 
         y='WIKI/%s'%(x)
 #        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
-#        mydata = Quandl.get(y,rows=30)
+        mydata = Quandl.get(y,rows=30)
         NumLines=C+AC+O+AO
 
         colors={}
