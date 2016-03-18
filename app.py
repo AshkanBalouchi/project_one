@@ -80,18 +80,18 @@ def index():
         if AO==1 : calls.append('Adj. Open')
 
         p = figure(title="%s Stock Ticks"%(stock),x_axis_type="datetime", plot_width=500, plot_height=500)
-#        for name in calls:
-#            p.line(mydata.index.values,mydata[name].values,
-#                legend=name,
-#                line_color=colors[name],
-#                line_width=3)
+        for name in calls:
+            p.line(mydata.index.values,mydata[name].values,
+                legend=name,
+                line_color=colors[name],
+                line_width=3)
 
 #        #plot = file_html(p, CDN, "my plot")
 
-#        script, div = components(p)
+        script, div = components(p)
     
-#        return render_template('end.html',plotscript=script,plotdiv=div)
-	return render_template('end.html')
+        return render_template('end.html',plotscript=script,plotdiv=div)
+#	return render_template('end.html')
 
 #if __name__ == '__main__':
 #    app.run()
