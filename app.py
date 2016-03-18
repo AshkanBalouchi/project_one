@@ -52,7 +52,7 @@ def index():
 
 
 	api_url_csv = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.csv' % stock
-	mydata = pd.read_csv(api_url_csv)	
+	mydata = pandas.read_csv(api_url_csv)	
 #        y='WIKI/%s'%(x)
 #        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
 #        mydata = Quandl.get(y,rows=30)
