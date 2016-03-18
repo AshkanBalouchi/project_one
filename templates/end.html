@@ -1,5 +1,6 @@
 <html>
   <head>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
     <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css" type="text/css" />
     <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
     {{ plotscript | safe }}
@@ -7,6 +8,8 @@
   <body>
     <div class=page>
       <h1>Header text</h1>
+	<h1>Stock Ticks for {{stock}} <br><a href="/index">Try another stock</a></h1>
+
       {{ plotdiv | safe }}
     </div>
   </body>
