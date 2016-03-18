@@ -3,7 +3,7 @@ import requests
 import simplejson as json
 import pandas
 #from Quandl import get
-#import quandl
+#import Quandl
 #from quandl import Quandl
 import bokeh
 from bokeh.plotting import figure,show
@@ -60,6 +60,8 @@ def index():
 
 	mydata = pandas.DataFrame.from_dict(raw_data.json()['data'])
 	mydata.columns=raw_data.json()['column_names']
+	mydata['Date'] = mydata['Date'].astype('datetime64')
+
 #        api_url_csv = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.csv' % stock
 #        mydata = pandas.read_csv(api_url_csv)	
 #        y='WIKI/%s'%(stock)
