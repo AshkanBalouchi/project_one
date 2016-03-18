@@ -9,7 +9,7 @@ from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-app.vars={}
+var={}
 
 @app.route('/')
 def main():
@@ -26,27 +26,27 @@ def index():
         return render_template('index.html')
     else:
         #request was a POST
-        app.vars['ticker'] = request.form['ticker']
+        var['ticker'] = request.form['ticker']
         if request.form.get('Close'):
-            app.vars['Close'] = 1
-        else : app.vars['Close'] = 0
+            var['Close'] = 1
+        else : var['Close'] = 0
         if request.form.get('Adj. Close'):
-            app.vars['AdjClose'] = 1
-        else : app.viars['AdjClose'] = 0
+            var['AdjClose'] = 1
+        else : var['AdjClose'] = 0
         if request.form.get('Open'):
-            app.vars['Open'] = 1
-        else : app.vars['Open'] = 0
+            var['Open'] = 1
+        else : var['Open'] = 0
         if request.form.get('Adj. Open'):
-            app.vars['AdjOpen'] = 1
-        else : app.vars['AdjOpen'] = 0
+            var['AdjOpen'] = 1
+        else : var['AdjOpen'] = 0
         
         
 
-        x=app.vars['ticker']
-        C=app.vars['Close']
-        AC=app.vars['AdjClose']
-        O=app.vars['Open']
-        AO=app.vars['AdjOpen']
+        x=var['ticker']
+        C=var['Close']
+        AC=var['AdjClose']
+        O=var['Open']
+        AO=var['AdjOpen']
 
 
         y='WIKI/%s'%(x)
