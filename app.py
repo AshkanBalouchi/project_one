@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-
+import Quandl
 #from bokeh.plotting import figure,show
 #from bokeh.io import output_notebook
 #from bokeh.resources import CDN
@@ -48,8 +48,8 @@ def index():
         AO=app.vars['AdjOpen']
 
 
-#        y='WIKI/%s'%(x)
-#        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
+        y='WIKI/%s'%(x)
+        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
         NumLines=C+AC+O+AO
 
         colors={}
