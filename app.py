@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from Quandl import get
+from Quandl import Quandl.get
 #import quandl
 #from quandl import Quandl
 #from bokeh.plotting import figure,show
@@ -52,7 +52,7 @@ def index():
 
         y='WIKI/%s'%(x)
 #        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
-        mydata = Quandl.get(y,rows=30)
+#        mydata = Quandl.get(y,rows=30)
         NumLines=C+AC+O+AO
 
         colors={}
