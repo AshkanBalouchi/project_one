@@ -81,8 +81,8 @@ def index():
 #        return render_template('end.html',plotscript=script,plotdiv=div)
 	return render_template('end.html')
 
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+#    app.run()
 #    app.run(host='0.0.0.0')
 
 #from flask import Flask, render_template, request, redirect
@@ -97,5 +97,5 @@ if __name__ == '__main__':
 #def index():
 #  return render_template('index.html')
 
-#if __name__ == '__main__':
-#  app.run(port=33507)
+if __name__ == '__main__':
+  app.run(port=33507)
