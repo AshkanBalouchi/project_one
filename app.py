@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, redirect
-#from quandl import Quandl
+from flask import Flask, render_template, request, redirect, Quandl
 #from Quandl import Quandl
 #from bokeh.plotting import figure,show
 #from bokeh.io import output_notebook
@@ -32,7 +31,7 @@ def index():
         else : app.vars['Close'] = 0
         if request.form.get('Adj. Close'):
             app.vars['AdjClose'] = 1
-        else : app.vars['AdjClose'] = 0
+        else : app.viars['AdjClose'] = 0
         if request.form.get('Open'):
             app.vars['Open'] = 1
         else : app.vars['Open'] = 0
@@ -51,7 +50,7 @@ def index():
 
         y='WIKI/%s'%(x)
 #        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
-        mydata = Quandl.get(y,rows=30)
+#        mydata = Quandl.get(y,rows=30)
         NumLines=C+AC+O+AO
 
         colors={}
