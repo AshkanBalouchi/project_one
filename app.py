@@ -81,7 +81,7 @@ def index():
 	return render_template('end.html')
 
 if __name__ == '__main__':
-    app.rum(host='0.0.0.0')
+    app.run(host='0.0.0.0')
 
 #from flask import Flask, render_template, request, redirect
 
