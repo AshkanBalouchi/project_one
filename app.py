@@ -58,7 +58,8 @@ def index():
 
 	raw_data = session.get(api_url)
 
-	mydata = pandas.DataFrame.from_dict(raw_data.json()['data'])
+	mydata_full = pandas.DataFrame.from_dict(raw_data.json()['data'])
+	mydata=mydata_full[:31]
 	mydata.columns=raw_data.json()['column_names']
 	mydata['Date'] = mydata['Date'].astype('datetime64')
 
