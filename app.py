@@ -52,6 +52,7 @@ def index():
         AC=var['AdjClose']
         O=var['Open']
         AO=var['AdjOpen']
+
 	api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % stock
 	session = requests.Session()
 	session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
@@ -72,6 +73,7 @@ def index():
 #        mydata = Quandl.get(y, authtoken="nWMHwtzyAfUAE9nJPZ82",rows=30)
 #        mydata = Quandl.get(y,rows=30)
         NumLines=C+AC+O+AO
+	if NumLines == 0 : C=1
 
         colors={}
         colors['Close']="red"
